@@ -7,7 +7,7 @@ MAKEFLAGS = --warn-undefined-variables
 MAKEFLAGS = --no-builtin-rules
 # --------------------------------------------------------------------------- #
 
-all: doc/index.html
+all: doc/index.html doc/.nojekyll
 
 doc:
 + dir.create("$@")
@@ -17,3 +17,6 @@ doc/index.html: restocking_ingredients.html | doc
 
 restocking_ingredients.html: restocking_ingredients.rmd
 + litedown::fuse("$<")
+
+doc/.nojekyll: | doc
++ file.create("$@") |> invisible()
