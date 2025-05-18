@@ -1,0 +1,26 @@
+body {
+  font-family: sans-serif;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+}
+body { font-size: .9em; }
+
+a { color: steelblue; }
+
+table {
+  &:only-child:not(.table > *) { margin: auto; }
+  th, td { padding: 5px; font-variant-numeric: tabular-nums; }
+  thead, tfoot, tr:nth-child(even) { background: whitesmoke; }
+  thead th { border-bottom: 1px solid #ddd; }
+  &:not(.datatable-table) {
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+  }
+
+.datatable-input {
+    width: 150px;
+}
+
+

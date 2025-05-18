@@ -1,0 +1,4053 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="generator" content="litedown 0.7.1">
+<title>Restocking Ingredients and their location</title>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+}
+body { font-size: .9em; }
+
+a { color: steelblue; }
+
+table {
+  &:only-child:not(.table > *) { margin: auto; }
+  th, td { padding: 5px; font-variant-numeric: tabular-nums; }
+  thead, tfoot, tr:nth-child(even) { background: whitesmoke; }
+  thead th { border-bottom: 1px solid #ddd; }
+  &:not(.datatable-table) {
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+  }
+
+.datatable-input {
+    width: 150px;
+}
+
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@10.0.0" defer></script>
+</head>
+<body>
+<div class="frontmatter">
+<div class="title"><h1>Restocking Ingredients and their location</h1></div>
+</div>
+<div class="body">
+<details>
+<summary><b>How to use</b></summary>
+<p>
+Search for <b>Effect</b> and <b>Location</b> to see what restocking merchants are nearby.
+    <ul>
+    <li>Type into a column search element to search in that column.</li>
+    <li>Type into a global search element to search globally.</li>
+    <li>Click on the waffle menu to show/hide columns (restock Count, Weight, or Cost)</li>
+    <li>Use <b>;</b> as a separator to search for multiple effects</li>
+    </ul>
+<p><b>Examples</b>
+<ul>
+<li>There are two merchants stocking <b>Fortify Fatigue</b> ingredients in <b>Vivec</b></li>
+<li>There is only a single ingredient, Saltrice, having both <b>Restore Health</b> and <b>Restore Fatigue</b> effects (searching for <i>Restore Health;Restore Fatigue</i>)
+</ul></p>
+</p>
+</details> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-datatables@10.0.0/dist/style.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-datatables@10.0.0/dist/column_filter.min.css">
+<div id="restocking">
+<table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Effect</th>
+<th>Merchant</th>
+<th>Location</th>
+<th align="right">Count</th>
+<th align="right">Weight</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alit Hide</td>
+<td>Drain Intelligence, Resist Poison, Telekinesis, Detect Animal</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Alit Hide</td>
+<td>Drain Intelligence, Resist Poison, Telekinesis, Detect Animal</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Alit Hide</td>
+<td>Drain Intelligence, Resist Poison, Telekinesis, Detect Animal</td>
+<td>Ernand Thierry</td>
+<td>Caldera, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Alit Hide</td>
+<td>Drain Intelligence, Resist Poison, Telekinesis, Detect Animal</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Alit Hide</td>
+<td>Drain Intelligence, Resist Poison, Telekinesis, Detect Animal</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Alit Hide</td>
+<td>Drain Intelligence, Resist Poison, Telekinesis, Detect Animal</td>
+<td>Sedris Omalen</td>
+<td>Maar Gan, Outpost</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Ampoule Pod</td>
+<td>Water Walking, Paralyze, Detect Animal, Drain Willpower</td>
+<td>Cienne Sintieve</td>
+<td>Ald’ruhn, Cienne Sintieve: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Ampoule Pod</td>
+<td>Water Walking, Paralyze, Detect Animal, Drain Willpower</td>
+<td>Tusamircil</td>
+<td>Wolverine Hall, Mages Guild</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Ampoule Pod</td>
+<td>Water Walking, Paralyze, Detect Animal, Drain Willpower</td>
+<td>Ernand Thierry</td>
+<td>Caldera, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Ampoule Pod</td>
+<td>Water Walking, Paralyze, Detect Animal, Drain Willpower</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Ampoule Pod</td>
+<td>Water Walking, Paralyze, Detect Animal, Drain Willpower</td>
+<td>Jolda</td>
+<td>Tel Mora, Jolda: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Ash Salts</td>
+<td>Drain Agility, Resist Magicka, Cure Blight Disease, Resist Magicka</td>
+<td>Relms Gilvilo</td>
+<td>Vivec, Redoran Temple Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Ash Salts</td>
+<td>Drain Agility, Resist Magicka, Cure Blight Disease, Resist Magicka</td>
+<td>Tivam Sadri</td>
+<td>Holamayan Monastery</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Ash Salts</td>
+<td>Drain Agility, Resist Magicka, Cure Blight Disease, Resist Magicka</td>
+<td>Folvys Andalor</td>
+<td>Ald’ruhn Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Ash Salts</td>
+<td>Drain Agility, Resist Magicka, Cure Blight Disease, Resist Magicka</td>
+<td>Eldrilu Dalen</td>
+<td>Vos, Vos Chapel</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Ash Salts</td>
+<td>Drain Agility, Resist Magicka, Cure Blight Disease, Resist Magicka</td>
+<td>Telis Salvani</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Ash Salts</td>
+<td>Drain Agility, Resist Magicka, Cure Blight Disease, Resist Magicka</td>
+<td>Somutis Vunnis</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Ash Salts</td>
+<td>Drain Agility, Resist Magicka, Cure Blight Disease, Resist Magicka</td>
+<td>Scelian Plebo</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Ash Yam</td>
+<td>Fortify Intelligence, Fortify Strength, Resist Common Disease, Detect Key</td>
+<td>Chaplain Ogrul</td>
+<td>Gnisis, Fort Darius</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Ash Yam</td>
+<td>Fortify Intelligence, Fortify Strength, Resist Common Disease, Detect Key</td>
+<td>Milar Maryon</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Ash Yam</td>
+<td>Fortify Intelligence, Fortify Strength, Resist Common Disease, Detect Key</td>
+<td>Ygfa</td>
+<td>Pelagiad, Fort Pelagiad</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Ash Yam</td>
+<td>Fortify Intelligence, Fortify Strength, Resist Common Disease, Detect Key</td>
+<td>Aunius Autrus</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Ash Yam</td>
+<td>Fortify Intelligence, Fortify Strength, Resist Common Disease, Detect Key</td>
+<td>Eldrilu Dalen</td>
+<td>Vos, Vos Chapel</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Ash Yam</td>
+<td>Fortify Intelligence, Fortify Strength, Resist Common Disease, Detect Key</td>
+<td>Dulian</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Ash Yam</td>
+<td>Fortify Intelligence, Fortify Strength, Resist Common Disease, Detect Key</td>
+<td>Zanmulk Sammalamus</td>
+<td>Gnisis, Temple</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Ash Yam</td>
+<td>Fortify Intelligence, Fortify Strength, Resist Common Disease, Detect Key</td>
+<td>J’Rasha</td>
+<td>Vivec, Foreign Quarter, J’Rasha: Healer</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Bittergreen Petals</td>
+<td>Restore Intelligence, Invisibility, Drain Endurance, Drain Magicka</td>
+<td>Telis Salvani</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bittergreen Petals</td>
+<td>Restore Intelligence, Invisibility, Drain Endurance, Drain Magicka</td>
+<td>Cocistian Quaspus</td>
+<td>Buckmoth Legion Fort</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bittergreen Petals</td>
+<td>Restore Intelligence, Invisibility, Drain Endurance, Drain Magicka</td>
+<td>Zanmulk Sammalamus</td>
+<td>Gnisis, Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bittergreen Petals</td>
+<td>Restore Intelligence, Invisibility, Drain Endurance, Drain Magicka</td>
+<td>Threvul Serethi</td>
+<td>Sadrith Mora, Thervul Serethi: Healer</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bittergreen Petals</td>
+<td>Restore Intelligence, Invisibility, Drain Endurance, Drain Magicka</td>
+<td>Ygfa</td>
+<td>Pelagiad, Fort Pelagiad</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bittergreen Petals</td>
+<td>Restore Intelligence, Invisibility, Drain Endurance, Drain Magicka</td>
+<td>Scelian Plebo</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bittergreen Petals</td>
+<td>Restore Intelligence, Invisibility, Drain Endurance, Drain Magicka</td>
+<td>Bildren Areleth</td>
+<td>Tel Aruhn, Bildren Areleth: Apothecary</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bittergreen Petals</td>
+<td>Restore Intelligence, Invisibility, Drain Endurance, Drain Magicka</td>
+<td>Vaval Selas</td>
+<td>Vivec, St. Olms Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Black Anther</td>
+<td>Drain Agility, Resist Fire, Drain Endurance, Light</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Anther</td>
+<td>Drain Agility, Resist Fire, Drain Endurance, Light</td>
+<td>Andil</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Anther</td>
+<td>Drain Agility, Resist Fire, Drain Endurance, Light</td>
+<td>Ajira</td>
+<td>Balmora, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Anther</td>
+<td>Drain Agility, Resist Fire, Drain Endurance, Light</td>
+<td>Brarayni Sarys</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Anther</td>
+<td>Drain Agility, Resist Fire, Drain Endurance, Light</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Anther</td>
+<td>Drain Agility, Resist Fire, Drain Endurance, Light</td>
+<td>Aurane Frernis</td>
+<td>Vivec, Foreign Quarter, Aurane Frernis: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Lichen</td>
+<td>Drain Strength, Resist Frost, Drain Speed, Cure Poison</td>
+<td>Sedris Omalen</td>
+<td>Maar Gan, Outpost</td>
+<td align="right">3</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Lichen</td>
+<td>Drain Strength, Resist Frost, Drain Speed, Cure Poison</td>
+<td>Relms Gilvilo</td>
+<td>Vivec, Redoran Temple Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Lichen</td>
+<td>Drain Strength, Resist Frost, Drain Speed, Cure Poison</td>
+<td>Irna Maryon</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">3</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Lichen</td>
+<td>Drain Strength, Resist Frost, Drain Speed, Cure Poison</td>
+<td>Dralval Andrano</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Lichen</td>
+<td>Drain Strength, Resist Frost, Drain Speed, Cure Poison</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Lichen</td>
+<td>Drain Strength, Resist Frost, Drain Speed, Cure Poison</td>
+<td>Jolda</td>
+<td>Tel Mora, Jolda: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Black Lichen</td>
+<td>Drain Strength, Resist Frost, Drain Speed, Cure Poison</td>
+<td>Somutis Vunnis</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Bloat</td>
+<td>Drain Magicka, Fortify Intelligence, Fortify Willpower, Detect Animal</td>
+<td>Aunius Autrus</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bloat</td>
+<td>Drain Magicka, Fortify Intelligence, Fortify Willpower, Detect Animal</td>
+<td>Mehra Drora</td>
+<td>Gnisis, Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bloat</td>
+<td>Drain Magicka, Fortify Intelligence, Fortify Willpower, Detect Animal</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bloat</td>
+<td>Drain Magicka, Fortify Intelligence, Fortify Willpower, Detect Animal</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bloat</td>
+<td>Drain Magicka, Fortify Intelligence, Fortify Willpower, Detect Animal</td>
+<td>Anarenen</td>
+<td>Ald’ruhn, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bloat</td>
+<td>Drain Magicka, Fortify Intelligence, Fortify Willpower, Detect Animal</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bloat</td>
+<td>Drain Magicka, Fortify Intelligence, Fortify Willpower, Detect Animal</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Bonemeal</td>
+<td>Restore Agility, Telekinesis, Drain Fatigue, Drain Personality</td>
+<td>Milar Maryon</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Bonemeal</td>
+<td>Restore Agility, Telekinesis, Drain Fatigue, Drain Personality</td>
+<td>Ulumpha gra-Sharob</td>
+<td>Gnisis, Fort Darius</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Bonemeal</td>
+<td>Restore Agility, Telekinesis, Drain Fatigue, Drain Personality</td>
+<td>Scelian Plebo</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Bonemeal</td>
+<td>Restore Agility, Telekinesis, Drain Fatigue, Drain Personality</td>
+<td>Anarenen</td>
+<td>Ald’ruhn, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Bonemeal</td>
+<td>Restore Agility, Telekinesis, Drain Fatigue, Drain Personality</td>
+<td>Garas Seloth</td>
+<td>Vivec, Telvanni Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Bonemeal</td>
+<td>Restore Agility, Telekinesis, Drain Fatigue, Drain Personality</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Bungler’s Bane</td>
+<td>Drain Speed, Drain Endurance, Dispel, Drain Strength</td>
+<td>Dralval Andrano</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Bungler’s Bane</td>
+<td>Drain Speed, Drain Endurance, Dispel, Drain Strength</td>
+<td>Danoso Andrano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Bungler’s Bane</td>
+<td>Drain Speed, Drain Endurance, Dispel, Drain Strength</td>
+<td>Ganalyn Saram</td>
+<td>Vivec, Hlaalu Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Bungler’s Bane</td>
+<td>Drain Speed, Drain Endurance, Dispel, Drain Strength</td>
+<td>Tusamircil</td>
+<td>Wolverine Hall, Mages Guild</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Bungler’s Bane</td>
+<td>Drain Speed, Drain Endurance, Dispel, Drain Strength</td>
+<td>Jolda</td>
+<td>Tel Mora, Jolda: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Chokeweed</td>
+<td>Drain Luck, Restore Fatigue, Cure Common Disease, Drain Willpower</td>
+<td>Vaval Selas</td>
+<td>Vivec, St. Olms Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Chokeweed</td>
+<td>Drain Luck, Restore Fatigue, Cure Common Disease, Drain Willpower</td>
+<td>Scelian Plebo</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Chokeweed</td>
+<td>Drain Luck, Restore Fatigue, Cure Common Disease, Drain Willpower</td>
+<td>J’Rasha</td>
+<td>Vivec, Foreign Quarter, J’Rasha: Healer</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Chokeweed</td>
+<td>Drain Luck, Restore Fatigue, Cure Common Disease, Drain Willpower</td>
+<td>Ygfa</td>
+<td>Pelagiad, Fort Pelagiad</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Chokeweed</td>
+<td>Drain Luck, Restore Fatigue, Cure Common Disease, Drain Willpower</td>
+<td>Felara Andrethi</td>
+<td>Tel Aruhn, Tower Living Quarters</td>
+<td align="right">4</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Chokeweed</td>
+<td>Drain Luck, Restore Fatigue, Cure Common Disease, Drain Willpower</td>
+<td>Telis Salvani</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Coda Flower</td>
+<td>Drain Personality, Levitate, Drain Intelligence, Drain Health</td>
+<td>Aurane Frernis</td>
+<td>Vivec, Foreign Quarter, Aurane Frernis: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td>Coda Flower</td>
+<td>Drain Personality, Levitate, Drain Intelligence, Drain Health</td>
+<td>Danoso Andrano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td>Coda Flower</td>
+<td>Drain Personality, Levitate, Drain Intelligence, Drain Health</td>
+<td>Brarayni Sarys</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td>Coda Flower</td>
+<td>Drain Personality, Levitate, Drain Intelligence, Drain Health</td>
+<td>Cienne Sintieve</td>
+<td>Ald’ruhn, Cienne Sintieve: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td>Coda Flower</td>
+<td>Drain Personality, Levitate, Drain Intelligence, Drain Health</td>
+<td>Ernand Thierry</td>
+<td>Caldera, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td>Coda Flower</td>
+<td>Drain Personality, Levitate, Drain Intelligence, Drain Health</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td>Coda Flower</td>
+<td>Drain Personality, Levitate, Drain Intelligence, Drain Health</td>
+<td>Peragon</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td>Comberry</td>
+<td>Drain Fatigue, Restore Magicka, Fire Shield, Reflect</td>
+<td>Ajira</td>
+<td>Balmora, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Comberry</td>
+<td>Drain Fatigue, Restore Magicka, Fire Shield, Reflect</td>
+<td>Telis Salvani</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Comberry</td>
+<td>Drain Fatigue, Restore Magicka, Fire Shield, Reflect</td>
+<td>Anarenen</td>
+<td>Ald’ruhn, Guild of Mages</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Comberry</td>
+<td>Drain Fatigue, Restore Magicka, Fire Shield, Reflect</td>
+<td>Scelian Plebo</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Comberry</td>
+<td>Drain Fatigue, Restore Magicka, Fire Shield, Reflect</td>
+<td>Milar Maryon</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Comberry</td>
+<td>Drain Fatigue, Restore Magicka, Fire Shield, Reflect</td>
+<td>Andilu Drothan</td>
+<td>Vivec Foreign Quarter, Andilu Drothan: Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Comberry</td>
+<td>Drain Fatigue, Restore Magicka, Fire Shield, Reflect</td>
+<td>Felara Andrethi</td>
+<td>Tel Aruhn, Tower Living Quarters</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Corkbulb Root</td>
+<td>Cure Paralyzation, Restore Health, Lightning Shield, Fortify Luck</td>
+<td>Ernand Thierry</td>
+<td>Caldera, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Corkbulb Root</td>
+<td>Cure Paralyzation, Restore Health, Lightning Shield, Fortify Luck</td>
+<td>Ganalyn Saram</td>
+<td>Vivec, Hlaalu Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Corkbulb Root</td>
+<td>Cure Paralyzation, Restore Health, Lightning Shield, Fortify Luck</td>
+<td>Llarara Omayn</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Corkbulb Root</td>
+<td>Cure Paralyzation, Restore Health, Lightning Shield, Fortify Luck</td>
+<td>Tivam Sadri</td>
+<td>Holamayan Monastery</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Corkbulb Root</td>
+<td>Cure Paralyzation, Restore Health, Lightning Shield, Fortify Luck</td>
+<td>Sedris Omalen</td>
+<td>Maar Gan, Outpost</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Corkbulb Root</td>
+<td>Cure Paralyzation, Restore Health, Lightning Shield, Fortify Luck</td>
+<td>Eldrilu Dalen</td>
+<td>Vos, Vos Chapel</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Corkbulb Root</td>
+<td>Cure Paralyzation, Restore Health, Lightning Shield, Fortify Luck</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Corkbulb Root</td>
+<td>Cure Paralyzation, Restore Health, Lightning Shield, Fortify Luck</td>
+<td>Guls Llervu</td>
+<td>Ald’ruhn, Guls Llervu’s House</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Corkbulb Root</td>
+<td>Cure Paralyzation, Restore Health, Lightning Shield, Fortify Luck</td>
+<td>Tusamircil</td>
+<td>Wolverine Hall, Mages Guild</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Corkbulb Root</td>
+<td>Cure Paralyzation, Restore Health, Lightning Shield, Fortify Luck</td>
+<td>Arrille</td>
+<td>Seyda Neen, Arrille’s Tradehouse</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Corprus Weepings</td>
+<td>Drain Fatigue, Fortify Luck, Drain Willpower, Restore Health</td>
+<td>Arnand Liric</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Corprus Weepings</td>
+<td>Drain Fatigue, Fortify Luck, Drain Willpower, Restore Health</td>
+<td>Threvul Serethi</td>
+<td>Sadrith Mora, Thervul Serethi: Healer</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Corprus Weepings</td>
+<td>Drain Fatigue, Fortify Luck, Drain Willpower, Restore Health</td>
+<td>Scelian Plebo</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Corprus Weepings</td>
+<td>Drain Fatigue, Fortify Luck, Drain Willpower, Restore Health</td>
+<td>Folvys Andalor</td>
+<td>Ald’ruhn Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Corprus Weepings</td>
+<td>Drain Fatigue, Fortify Luck, Drain Willpower, Restore Health</td>
+<td>Aurane Frernis</td>
+<td>Vivec, Foreign Quarter, Aurane Frernis: Apothecary</td>
+<td align="right">3</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Crab Meat</td>
+<td>Restore Fatigue, Resist Shock, Lightning Shield, Restore Luck</td>
+<td>Ajira</td>
+<td>Balmora, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Crab Meat</td>
+<td>Restore Fatigue, Resist Shock, Lightning Shield, Restore Luck</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Crab Meat</td>
+<td>Restore Fatigue, Resist Shock, Lightning Shield, Restore Luck</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Crab Meat</td>
+<td>Restore Fatigue, Resist Shock, Lightning Shield, Restore Luck</td>
+<td>Chaplain Ogrul</td>
+<td>Gnisis, Fort Darius</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Crab Meat</td>
+<td>Restore Fatigue, Resist Shock, Lightning Shield, Restore Luck</td>
+<td>Anarenen</td>
+<td>Ald’ruhn, Guild of Mages</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Crab Meat</td>
+<td>Restore Fatigue, Resist Shock, Lightning Shield, Restore Luck</td>
+<td>Milar Maryon</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Crab Meat</td>
+<td>Restore Fatigue, Resist Shock, Lightning Shield, Restore Luck</td>
+<td>Tusamircil</td>
+<td>Wolverine Hall, Mages Guild</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Daedra Skin</td>
+<td>Fortify Strength, Cure Common Disease, Paralyze, Swift Swim</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">1</td>
+<td align="right">0.2</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Daedra Skin</td>
+<td>Fortify Strength, Cure Common Disease, Paralyze, Swift Swim</td>
+<td>Garas Seloth</td>
+<td>Vivec, Telvanni Alchemist</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Daedra Skin</td>
+<td>Fortify Strength, Cure Common Disease, Paralyze, Swift Swim</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Daedra Skin</td>
+<td>Fortify Strength, Cure Common Disease, Paralyze, Swift Swim</td>
+<td>Brarayni Sarys</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Daedra’s Heart</td>
+<td>Restore Magicka, Fortify Endurance, Drain Agility, Night Eye</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">2</td>
+<td align="right">1.0</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Daedra’s Heart</td>
+<td>Restore Magicka, Fortify Endurance, Drain Agility, Night Eye</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">2</td>
+<td align="right">1.0</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Daedra’s Heart</td>
+<td>Restore Magicka, Fortify Endurance, Drain Agility, Night Eye</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">1</td>
+<td align="right">1.0</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Daedra’s Heart</td>
+<td>Restore Magicka, Fortify Endurance, Drain Agility, Night Eye</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">1</td>
+<td align="right">1.0</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Diamond</td>
+<td>Drain Agility, Invisibility, Reflect, Detect Key</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">250</td>
+</tr>
+<tr>
+<td>Diamond</td>
+<td>Drain Agility, Invisibility, Reflect, Detect Key</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">1</td>
+<td align="right">0.2</td>
+<td align="right">250</td>
+</tr>
+<tr>
+<td>Diamond</td>
+<td>Drain Agility, Invisibility, Reflect, Detect Key</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">4</td>
+<td align="right">0.2</td>
+<td align="right">250</td>
+</tr>
+<tr>
+<td>Diamond</td>
+<td>Drain Agility, Invisibility, Reflect, Detect Key</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">3</td>
+<td align="right">0.2</td>
+<td align="right">250</td>
+</tr>
+<tr>
+<td>Diamond</td>
+<td>Drain Agility, Invisibility, Reflect, Detect Key</td>
+<td>Anarenen</td>
+<td>Ald’ruhn, Guild of Mages</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">250</td>
+</tr>
+<tr>
+<td>Diamond</td>
+<td>Drain Agility, Invisibility, Reflect, Detect Key</td>
+<td>Brarayni Sarys</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">250</td>
+</tr>
+<tr>
+<td>Dreugh Wax</td>
+<td>Fortify Strength, Restore Strength, Drain Luck, Drain Willpower</td>
+<td>Jolda</td>
+<td>Tel Mora, Jolda: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Dreugh Wax</td>
+<td>Fortify Strength, Restore Strength, Drain Luck, Drain Willpower</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Dreugh Wax</td>
+<td>Fortify Strength, Restore Strength, Drain Luck, Drain Willpower</td>
+<td>Danoso Andrano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Dreugh Wax</td>
+<td>Fortify Strength, Restore Strength, Drain Luck, Drain Willpower</td>
+<td>Mehra Drora</td>
+<td>Gnisis, Temple</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Dreugh Wax</td>
+<td>Fortify Strength, Restore Strength, Drain Luck, Drain Willpower</td>
+<td>Somutis Vunnis</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Dreugh Wax</td>
+<td>Fortify Strength, Restore Strength, Drain Luck, Drain Willpower</td>
+<td>Salen Ravel</td>
+<td>Maar Gan, Shrine</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Dreugh Wax</td>
+<td>Fortify Strength, Restore Strength, Drain Luck, Drain Willpower</td>
+<td>Relms Gilvilo</td>
+<td>Vivec, Redoran Temple Shrine</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Ectoplasm</td>
+<td>Fortify Agility, Detect Animal, Drain Strength, Drain Health</td>
+<td>Danoso Andrano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Ectoplasm</td>
+<td>Fortify Agility, Detect Animal, Drain Strength, Drain Health</td>
+<td>Llarara Omayn</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Ectoplasm</td>
+<td>Fortify Agility, Detect Animal, Drain Strength, Drain Health</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Ectoplasm</td>
+<td>Fortify Agility, Detect Animal, Drain Strength, Drain Health</td>
+<td>Salen Ravel</td>
+<td>Maar Gan, Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Ectoplasm</td>
+<td>Fortify Agility, Detect Animal, Drain Strength, Drain Health</td>
+<td>Bildren Areleth</td>
+<td>Tel Aruhn, Bildren Areleth: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Ectoplasm</td>
+<td>Fortify Agility, Detect Animal, Drain Strength, Drain Health</td>
+<td>Tivam Sadri</td>
+<td>Holamayan Monastery</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Ectoplasm</td>
+<td>Fortify Agility, Detect Animal, Drain Strength, Drain Health</td>
+<td>Galuro Belan</td>
+<td>Vivec, Telvanni Apothecary</td>
+<td align="right">3</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Emerald</td>
+<td>Fortify Magicka, Restore Health, Drain Agility, Drain Endurance</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Emerald</td>
+<td>Fortify Magicka, Restore Health, Drain Agility, Drain Endurance</td>
+<td>Scelian Plebo</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Emerald</td>
+<td>Fortify Magicka, Restore Health, Drain Agility, Drain Endurance</td>
+<td>Cocistian Quaspus</td>
+<td>Buckmoth Legion Fort</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Emerald</td>
+<td>Fortify Magicka, Restore Health, Drain Agility, Drain Endurance</td>
+<td>Irna Maryon</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Emerald</td>
+<td>Fortify Magicka, Restore Health, Drain Agility, Drain Endurance</td>
+<td>Folvys Andalor</td>
+<td>Ald’ruhn Temple</td>
+<td align="right">3</td>
+<td align="right">0.2</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Fire Petal</td>
+<td>Resist Fire, Drain Health, Spell Absorption, Paralyze</td>
+<td>Cocistian Quaspus</td>
+<td>Buckmoth Legion Fort</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Fire Petal</td>
+<td>Resist Fire, Drain Health, Spell Absorption, Paralyze</td>
+<td>Galuro Belan</td>
+<td>Vivec, Telvanni Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Fire Petal</td>
+<td>Resist Fire, Drain Health, Spell Absorption, Paralyze</td>
+<td>Mehra Drora</td>
+<td>Gnisis, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Fire Petal</td>
+<td>Resist Fire, Drain Health, Spell Absorption, Paralyze</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Fire Petal</td>
+<td>Resist Fire, Drain Health, Spell Absorption, Paralyze</td>
+<td>Somutis Vunnis</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Fire Petal</td>
+<td>Resist Fire, Drain Health, Spell Absorption, Paralyze</td>
+<td>Irna Maryon</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Fire Salts</td>
+<td>Drain Health, Fortify Agility, Resist Frost, Fire Shield</td>
+<td>Relms Gilvilo</td>
+<td>Vivec, Redoran Temple Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Fire Salts</td>
+<td>Drain Health, Fortify Agility, Resist Frost, Fire Shield</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Fire Salts</td>
+<td>Drain Health, Fortify Agility, Resist Frost, Fire Shield</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">4</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Fire Salts</td>
+<td>Drain Health, Fortify Agility, Resist Frost, Fire Shield</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Fire Salts</td>
+<td>Drain Health, Fortify Agility, Resist Frost, Fire Shield</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Fire Salts</td>
+<td>Drain Health, Fortify Agility, Resist Frost, Fire Shield</td>
+<td>Eldrilu Dalen</td>
+<td>Vos, Vos Chapel</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Fire Salts</td>
+<td>Drain Health, Fortify Agility, Resist Frost, Fire Shield</td>
+<td>Anarenen</td>
+<td>Ald’ruhn, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Frost Salts</td>
+<td>Drain Speed, Restore Magicka, Frost Shield, Resist Fire</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">75</td>
+</tr>
+<tr>
+<td>Frost Salts</td>
+<td>Drain Speed, Restore Magicka, Frost Shield, Resist Fire</td>
+<td>Ulumpha gra-Sharob</td>
+<td>Gnisis, Fort Darius</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">75</td>
+</tr>
+<tr>
+<td>Frost Salts</td>
+<td>Drain Speed, Restore Magicka, Frost Shield, Resist Fire</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">75</td>
+</tr>
+<tr>
+<td>Frost Salts</td>
+<td>Drain Speed, Restore Magicka, Frost Shield, Resist Fire</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">75</td>
+</tr>
+<tr>
+<td>Frost Salts</td>
+<td>Drain Speed, Restore Magicka, Frost Shield, Resist Fire</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">75</td>
+</tr>
+<tr>
+<td>Frost Salts</td>
+<td>Drain Speed, Restore Magicka, Frost Shield, Resist Fire</td>
+<td>Cienne Sintieve</td>
+<td>Ald’ruhn, Cienne Sintieve: Alchemist</td>
+<td align="right">3</td>
+<td align="right">0.1</td>
+<td align="right">75</td>
+</tr>
+<tr>
+<td>Frost Salts</td>
+<td>Drain Speed, Restore Magicka, Frost Shield, Resist Fire</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">4</td>
+<td align="right">0.1</td>
+<td align="right">75</td>
+</tr>
+<tr>
+<td>Ghoul Heart</td>
+<td>Paralyze, Cure Poison, Fortify Attack</td>
+<td>Relms Gilvilo</td>
+<td>Vivec, Redoran Temple Shrine</td>
+<td align="right">1</td>
+<td align="right">0.5</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Ghoul Heart</td>
+<td>Paralyze, Cure Poison, Fortify Attack</td>
+<td>Mehra Drora</td>
+<td>Gnisis, Temple</td>
+<td align="right">1</td>
+<td align="right">0.5</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Ghoul Heart</td>
+<td>Paralyze, Cure Poison, Fortify Attack</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">1</td>
+<td align="right">0.5</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Ghoul Heart</td>
+<td>Paralyze, Cure Poison, Fortify Attack</td>
+<td>Tivam Sadri</td>
+<td>Holamayan Monastery</td>
+<td align="right">1</td>
+<td align="right">0.5</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Ghoul Heart</td>
+<td>Paralyze, Cure Poison, Fortify Attack</td>
+<td>Lloros Sarano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">2</td>
+<td align="right">0.5</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Ghoul Heart</td>
+<td>Paralyze, Cure Poison, Fortify Attack</td>
+<td>Brarayni Sarys</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">1</td>
+<td align="right">0.5</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Ghoul Heart</td>
+<td>Paralyze, Cure Poison, Fortify Attack</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">2</td>
+<td align="right">0.5</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Gold Kanet</td>
+<td>Drain Health, Burden, Drain Luck, Restore Strength</td>
+<td>Andil</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Gold Kanet</td>
+<td>Drain Health, Burden, Drain Luck, Restore Strength</td>
+<td>Andilu Drothan</td>
+<td>Vivec Foreign Quarter, Andilu Drothan: Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Gold Kanet</td>
+<td>Drain Health, Burden, Drain Luck, Restore Strength</td>
+<td>Peragon</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Gold Kanet</td>
+<td>Drain Health, Burden, Drain Luck, Restore Strength</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Gold Kanet</td>
+<td>Drain Health, Burden, Drain Luck, Restore Strength</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Gravedust</td>
+<td>Drain Intelligence, Cure Common Disease, Drain Magicka, Restore Endurance</td>
+<td>Aunius Autrus</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Gravedust</td>
+<td>Drain Intelligence, Cure Common Disease, Drain Magicka, Restore Endurance</td>
+<td>Arnand Liric</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Gravedust</td>
+<td>Drain Intelligence, Cure Common Disease, Drain Magicka, Restore Endurance</td>
+<td>Milar Maryon</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Gravedust</td>
+<td>Drain Intelligence, Cure Common Disease, Drain Magicka, Restore Endurance</td>
+<td>Llathyno Hlaalu</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Gravedust</td>
+<td>Drain Intelligence, Cure Common Disease, Drain Magicka, Restore Endurance</td>
+<td>Vaval Selas</td>
+<td>Vivec, St. Olms Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Gravedust</td>
+<td>Drain Intelligence, Cure Common Disease, Drain Magicka, Restore Endurance</td>
+<td>Lloros Sarano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Gravedust</td>
+<td>Drain Intelligence, Cure Common Disease, Drain Magicka, Restore Endurance</td>
+<td>Salen Ravel</td>
+<td>Maar Gan, Shrine</td>
+<td align="right">12</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Gravedust</td>
+<td>Drain Intelligence, Cure Common Disease, Drain Magicka, Restore Endurance</td>
+<td>Tivam Sadri</td>
+<td>Holamayan Monastery</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Green Lichen</td>
+<td>Fortify Personality, Cure Common Disease, Drain Strength, Drain Health</td>
+<td>Scelian Plebo</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Green Lichen</td>
+<td>Fortify Personality, Cure Common Disease, Drain Strength, Drain Health</td>
+<td>Dralval Andrano</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Green Lichen</td>
+<td>Fortify Personality, Cure Common Disease, Drain Strength, Drain Health</td>
+<td>Irna Maryon</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">3</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Green Lichen</td>
+<td>Fortify Personality, Cure Common Disease, Drain Strength, Drain Health</td>
+<td>Telis Salvani</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Green Lichen</td>
+<td>Fortify Personality, Cure Common Disease, Drain Strength, Drain Health</td>
+<td>Aurane Frernis</td>
+<td>Vivec, Foreign Quarter, Aurane Frernis: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Guar Hide</td>
+<td>Drain Fatigue, Fortify Endurance, Restore Personality, Fortify Luck</td>
+<td>Folvys Andalor</td>
+<td>Ald’ruhn Temple</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Guar Hide</td>
+<td>Drain Fatigue, Fortify Endurance, Restore Personality, Fortify Luck</td>
+<td>Aunius Autrus</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Guar Hide</td>
+<td>Drain Fatigue, Fortify Endurance, Restore Personality, Fortify Luck</td>
+<td>Ygfa</td>
+<td>Pelagiad, Fort Pelagiad</td>
+<td align="right">4</td>
+<td align="right">1.0</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Guar Hide</td>
+<td>Drain Fatigue, Fortify Endurance, Restore Personality, Fortify Luck</td>
+<td>Eldrilu Dalen</td>
+<td>Vos, Vos Chapel</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Hackle-Lo Leaf</td>
+<td>Restore Fatigue, Paralyze, Water Breathing, Restore Luck</td>
+<td>Sedris Omalen</td>
+<td>Maar Gan, Outpost</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td>Hackle-Lo Leaf</td>
+<td>Restore Fatigue, Paralyze, Water Breathing, Restore Luck</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td>Hackle-Lo Leaf</td>
+<td>Restore Fatigue, Paralyze, Water Breathing, Restore Luck</td>
+<td>Garas Seloth</td>
+<td>Vivec, Telvanni Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td>Hackle-Lo Leaf</td>
+<td>Restore Fatigue, Paralyze, Water Breathing, Restore Luck</td>
+<td>Mehra Drora</td>
+<td>Gnisis, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td>Hackle-Lo Leaf</td>
+<td>Restore Fatigue, Paralyze, Water Breathing, Restore Luck</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td>Hackle-Lo Leaf</td>
+<td>Restore Fatigue, Paralyze, Water Breathing, Restore Luck</td>
+<td>Tivam Sadri</td>
+<td>Holamayan Monastery</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td>Hackle-Lo Leaf</td>
+<td>Restore Fatigue, Paralyze, Water Breathing, Restore Luck</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td>Hackle-Lo Leaf</td>
+<td>Restore Fatigue, Paralyze, Water Breathing, Restore Luck</td>
+<td>Llarara Omayn</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td>Heather</td>
+<td>Restore Personality, Feather, Drain Speed, Drain Personality</td>
+<td>Peragon</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Heather</td>
+<td>Restore Personality, Feather, Drain Speed, Drain Personality</td>
+<td>Ajira</td>
+<td>Balmora, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Heather</td>
+<td>Restore Personality, Feather, Drain Speed, Drain Personality</td>
+<td>Andilu Drothan</td>
+<td>Vivec Foreign Quarter, Andilu Drothan: Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Heather</td>
+<td>Restore Personality, Feather, Drain Speed, Drain Personality</td>
+<td>Anarenen</td>
+<td>Ald’ruhn, Guild of Mages</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Heather</td>
+<td>Restore Personality, Feather, Drain Speed, Drain Personality</td>
+<td>Bildren Areleth</td>
+<td>Tel Aruhn, Bildren Areleth: Apothecary</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Heather</td>
+<td>Restore Personality, Feather, Drain Speed, Drain Personality</td>
+<td>Brarayni Sarys</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Heather</td>
+<td>Restore Personality, Feather, Drain Speed, Drain Personality</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Hound Meat</td>
+<td>Restore Fatigue, Fortify Fatigue, Reflect, Detect Enchantment</td>
+<td>Ganalyn Saram</td>
+<td>Vivec, Hlaalu Alchemist</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Hound Meat</td>
+<td>Restore Fatigue, Fortify Fatigue, Reflect, Detect Enchantment</td>
+<td>Ajira</td>
+<td>Balmora, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Hound Meat</td>
+<td>Restore Fatigue, Fortify Fatigue, Reflect, Detect Enchantment</td>
+<td>Arnand Liric</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Hound Meat</td>
+<td>Restore Fatigue, Fortify Fatigue, Reflect, Detect Enchantment</td>
+<td>Ulumpha gra-Sharob</td>
+<td>Gnisis, Fort Darius</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Hound Meat</td>
+<td>Restore Fatigue, Fortify Fatigue, Reflect, Detect Enchantment</td>
+<td>Zanmulk Sammalamus</td>
+<td>Gnisis, Temple</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Hound Meat</td>
+<td>Restore Fatigue, Fortify Fatigue, Reflect, Detect Enchantment</td>
+<td>Threvul Serethi</td>
+<td>Sadrith Mora, Thervul Serethi: Healer</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Hound Meat</td>
+<td>Restore Fatigue, Fortify Fatigue, Reflect, Detect Enchantment</td>
+<td>Cienne Sintieve</td>
+<td>Ald’ruhn, Cienne Sintieve: Alchemist</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Hound Meat</td>
+<td>Restore Fatigue, Fortify Fatigue, Reflect, Detect Enchantment</td>
+<td>Tusamircil</td>
+<td>Wolverine Hall, Mages Guild</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Hound Meat</td>
+<td>Restore Fatigue, Fortify Fatigue, Reflect, Detect Enchantment</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Hypha Facia</td>
+<td>Drain Luck, Drain Agility, Drain Fatigue, Detect Enchantment</td>
+<td>Danoso Andrano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Hypha Facia</td>
+<td>Drain Luck, Drain Agility, Drain Fatigue, Detect Enchantment</td>
+<td>Dralval Andrano</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Hypha Facia</td>
+<td>Drain Luck, Drain Agility, Drain Fatigue, Detect Enchantment</td>
+<td>Aurane Frernis</td>
+<td>Vivec, Foreign Quarter, Aurane Frernis: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Hypha Facia</td>
+<td>Drain Luck, Drain Agility, Drain Fatigue, Detect Enchantment</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Hypha Facia</td>
+<td>Drain Luck, Drain Agility, Drain Fatigue, Detect Enchantment</td>
+<td>Jolda</td>
+<td>Tel Mora, Jolda: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Kagouti Hide</td>
+<td>Drain Fatigue, Fortify Speed, Resist Common Disease, Night Eye</td>
+<td>Guls Llervu</td>
+<td>Ald’ruhn, Guls Llervu’s House</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kagouti Hide</td>
+<td>Drain Fatigue, Fortify Speed, Resist Common Disease, Night Eye</td>
+<td>Galuro Belan</td>
+<td>Vivec, Telvanni Apothecary</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kagouti Hide</td>
+<td>Drain Fatigue, Fortify Speed, Resist Common Disease, Night Eye</td>
+<td>Dralval Andrano</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kagouti Hide</td>
+<td>Drain Fatigue, Fortify Speed, Resist Common Disease, Night Eye</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kagouti Hide</td>
+<td>Drain Fatigue, Fortify Speed, Resist Common Disease, Night Eye</td>
+<td>Salen Ravel</td>
+<td>Maar Gan, Shrine</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kagouti Hide</td>
+<td>Drain Fatigue, Fortify Speed, Resist Common Disease, Night Eye</td>
+<td>Bildren Areleth</td>
+<td>Tel Aruhn, Bildren Areleth: Apothecary</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kresh Fiber</td>
+<td>Restore Luck, Fortify Personality, Drain Magicka, Drain Speed</td>
+<td>Somutis Vunnis</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Kresh Fiber</td>
+<td>Restore Luck, Fortify Personality, Drain Magicka, Drain Speed</td>
+<td>Bildren Areleth</td>
+<td>Tel Aruhn, Bildren Areleth: Apothecary</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Kresh Fiber</td>
+<td>Restore Luck, Fortify Personality, Drain Magicka, Drain Speed</td>
+<td>Andil</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Kresh Fiber</td>
+<td>Restore Luck, Fortify Personality, Drain Magicka, Drain Speed</td>
+<td>Cocistian Quaspus</td>
+<td>Buckmoth Legion Fort</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Kresh Fiber</td>
+<td>Restore Luck, Fortify Personality, Drain Magicka, Drain Speed</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Kresh Fiber</td>
+<td>Restore Luck, Fortify Personality, Drain Magicka, Drain Speed</td>
+<td>Llathyno Hlaalu</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Kresh Fiber</td>
+<td>Restore Luck, Fortify Personality, Drain Magicka, Drain Speed</td>
+<td>Galuro Belan</td>
+<td>Vivec, Telvanni Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Kwama Cuttle</td>
+<td>Resist Poison, Drain Fatigue, Water Walking, Water Breathing</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kwama Cuttle</td>
+<td>Resist Poison, Drain Fatigue, Water Walking, Water Breathing</td>
+<td>Ajira</td>
+<td>Balmora, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kwama Cuttle</td>
+<td>Resist Poison, Drain Fatigue, Water Walking, Water Breathing</td>
+<td>Dulian</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kwama Cuttle</td>
+<td>Resist Poison, Drain Fatigue, Water Walking, Water Breathing</td>
+<td>Cienne Sintieve</td>
+<td>Ald’ruhn, Cienne Sintieve: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kwama Cuttle</td>
+<td>Resist Poison, Drain Fatigue, Water Walking, Water Breathing</td>
+<td>Tusamircil</td>
+<td>Wolverine Hall, Mages Guild</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kwama Cuttle</td>
+<td>Resist Poison, Drain Fatigue, Water Walking, Water Breathing</td>
+<td>Ganalyn Saram</td>
+<td>Vivec, Hlaalu Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kwama Cuttle</td>
+<td>Resist Poison, Drain Fatigue, Water Walking, Water Breathing</td>
+<td>Irna Maryon</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Kwama Cuttle</td>
+<td>Resist Poison, Drain Fatigue, Water Walking, Water Breathing</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Luminous Russula</td>
+<td>Water Breathing, Drain Fatigue, Poison</td>
+<td>Ernand Thierry</td>
+<td>Caldera, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Luminous Russula</td>
+<td>Water Breathing, Drain Fatigue, Poison</td>
+<td>Jolda</td>
+<td>Tel Mora, Jolda: Apothecary</td>
+<td align="right">10</td>
+<td align="right">0.2</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Luminous Russula</td>
+<td>Water Breathing, Drain Fatigue, Poison</td>
+<td>Peragon</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Luminous Russula</td>
+<td>Water Breathing, Drain Fatigue, Poison</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.2</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Marshmerrow</td>
+<td>Restore Health, Detect Enchantment, Drain Willpower, Drain Fatigue</td>
+<td>Chaplain Ogrul</td>
+<td>Gnisis, Fort Darius</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Marshmerrow</td>
+<td>Restore Health, Detect Enchantment, Drain Willpower, Drain Fatigue</td>
+<td>Ygfa</td>
+<td>Pelagiad, Fort Pelagiad</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Marshmerrow</td>
+<td>Restore Health, Detect Enchantment, Drain Willpower, Drain Fatigue</td>
+<td>Milar Maryon</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Marshmerrow</td>
+<td>Restore Health, Detect Enchantment, Drain Willpower, Drain Fatigue</td>
+<td>Scelian Plebo</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Marshmerrow</td>
+<td>Restore Health, Detect Enchantment, Drain Willpower, Drain Fatigue</td>
+<td>Felara Andrethi</td>
+<td>Tel Aruhn, Tower Living Quarters</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Marshmerrow</td>
+<td>Restore Health, Detect Enchantment, Drain Willpower, Drain Fatigue</td>
+<td>J’Rasha</td>
+<td>Vivec, Foreign Quarter, J’Rasha: Healer</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Marshmerrow</td>
+<td>Restore Health, Detect Enchantment, Drain Willpower, Drain Fatigue</td>
+<td>Danoso Andrano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Marshmerrow</td>
+<td>Restore Health, Detect Enchantment, Drain Willpower, Drain Fatigue</td>
+<td>Dralval Andrano</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Marshmerrow</td>
+<td>Restore Health, Detect Enchantment, Drain Willpower, Drain Fatigue</td>
+<td>Andil</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Muck</td>
+<td>Drain Intelligence, Detect Key, Drain Personality, Cure Common Disease</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Muck</td>
+<td>Drain Intelligence, Detect Key, Drain Personality, Cure Common Disease</td>
+<td>Dulian</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Muck</td>
+<td>Drain Intelligence, Detect Key, Drain Personality, Cure Common Disease</td>
+<td>Tivam Sadri</td>
+<td>Holamayan Monastery</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Muck</td>
+<td>Drain Intelligence, Detect Key, Drain Personality, Cure Common Disease</td>
+<td>Andilu Drothan</td>
+<td>Vivec Foreign Quarter, Andilu Drothan: Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Muck</td>
+<td>Drain Intelligence, Detect Key, Drain Personality, Cure Common Disease</td>
+<td>Brarayni Sarys</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Muck</td>
+<td>Drain Intelligence, Detect Key, Drain Personality, Cure Common Disease</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Muck</td>
+<td>Drain Intelligence, Detect Key, Drain Personality, Cure Common Disease</td>
+<td>Llathyno Hlaalu</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Netch Leather</td>
+<td>Fortify Endurance, Fortify Intelligence, Drain Personality, Cure Paralyzation</td>
+<td>Eldrilu Dalen</td>
+<td>Vos, Vos Chapel</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Netch Leather</td>
+<td>Fortify Endurance, Fortify Intelligence, Drain Personality, Cure Paralyzation</td>
+<td>Threvul Serethi</td>
+<td>Sadrith Mora, Thervul Serethi: Healer</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Netch Leather</td>
+<td>Fortify Endurance, Fortify Intelligence, Drain Personality, Cure Paralyzation</td>
+<td>Mehra Drora</td>
+<td>Gnisis, Temple</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Netch Leather</td>
+<td>Fortify Endurance, Fortify Intelligence, Drain Personality, Cure Paralyzation</td>
+<td>Telis Salvani</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Netch Leather</td>
+<td>Fortify Endurance, Fortify Intelligence, Drain Personality, Cure Paralyzation</td>
+<td>Arnand Liric</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Netch Leather</td>
+<td>Fortify Endurance, Fortify Intelligence, Drain Personality, Cure Paralyzation</td>
+<td>Aunius Autrus</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Pearl</td>
+<td>Drain Agility, Dispel, Water Breathing, Resist Common Disease</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">4</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Pearl</td>
+<td>Drain Agility, Dispel, Water Breathing, Resist Common Disease</td>
+<td>Garas Seloth</td>
+<td>Vivec, Telvanni Alchemist</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Pearl</td>
+<td>Drain Agility, Dispel, Water Breathing, Resist Common Disease</td>
+<td>Peragon</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Pearl</td>
+<td>Drain Agility, Dispel, Water Breathing, Resist Common Disease</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Pearl</td>
+<td>Drain Agility, Dispel, Water Breathing, Resist Common Disease</td>
+<td>Danoso Andrano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">3</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Pearl</td>
+<td>Drain Agility, Dispel, Water Breathing, Resist Common Disease</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">3</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Pearl</td>
+<td>Drain Agility, Dispel, Water Breathing, Resist Common Disease</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">3</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Pearl</td>
+<td>Drain Agility, Dispel, Water Breathing, Resist Common Disease</td>
+<td>Jolda</td>
+<td>Tel Mora, Jolda: Apothecary</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Racer Plumes</td>
+<td>Drain Willpower, Levitate</td>
+<td>Garas Seloth</td>
+<td>Vivec, Telvanni Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Racer Plumes</td>
+<td>Drain Willpower, Levitate</td>
+<td>Cienne Sintieve</td>
+<td>Ald’ruhn, Cienne Sintieve: Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Racer Plumes</td>
+<td>Drain Willpower, Levitate</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Racer Plumes</td>
+<td>Drain Willpower, Levitate</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Racer Plumes</td>
+<td>Drain Willpower, Levitate</td>
+<td>Brarayni Sarys</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Racer Plumes</td>
+<td>Drain Willpower, Levitate</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Racer Plumes</td>
+<td>Drain Willpower, Levitate</td>
+<td>Tusamircil</td>
+<td>Wolverine Hall, Mages Guild</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Rat Meat</td>
+<td>Drain Magicka, Paralyze, Cure Poison, Resist Poison</td>
+<td>Felara Andrethi</td>
+<td>Tel Aruhn, Tower Living Quarters</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Rat Meat</td>
+<td>Drain Magicka, Paralyze, Cure Poison, Resist Poison</td>
+<td>Chaplain Ogrul</td>
+<td>Gnisis, Fort Darius</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Rat Meat</td>
+<td>Drain Magicka, Paralyze, Cure Poison, Resist Poison</td>
+<td>Milar Maryon</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Rat Meat</td>
+<td>Drain Magicka, Paralyze, Cure Poison, Resist Poison</td>
+<td>Cocistian Quaspus</td>
+<td>Buckmoth Legion Fort</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Rat Meat</td>
+<td>Drain Magicka, Paralyze, Cure Poison, Resist Poison</td>
+<td>Folvys Andalor</td>
+<td>Ald’ruhn Temple</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Rat Meat</td>
+<td>Drain Magicka, Paralyze, Cure Poison, Resist Poison</td>
+<td>Zanmulk Sammalamus</td>
+<td>Gnisis, Temple</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Rat Meat</td>
+<td>Drain Magicka, Paralyze, Cure Poison, Resist Poison</td>
+<td>Scelian Plebo</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Rat Meat</td>
+<td>Drain Magicka, Paralyze, Cure Poison, Resist Poison</td>
+<td>Telis Salvani</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Rat Meat</td>
+<td>Drain Magicka, Paralyze, Cure Poison, Resist Poison</td>
+<td>Vaval Selas</td>
+<td>Vivec, St. Olms Temple</td>
+<td align="right">5</td>
+<td align="right">1.0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Red Lichen</td>
+<td>Drain Speed, Light, Cure Common Disease, Drain Magicka</td>
+<td>Irna Maryon</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">3</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Red Lichen</td>
+<td>Drain Speed, Light, Cure Common Disease, Drain Magicka</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Red Lichen</td>
+<td>Drain Speed, Light, Cure Common Disease, Drain Magicka</td>
+<td>Lloros Sarano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Red Lichen</td>
+<td>Drain Speed, Light, Cure Common Disease, Drain Magicka</td>
+<td>Aurane Frernis</td>
+<td>Vivec, Foreign Quarter, Aurane Frernis: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Red Lichen</td>
+<td>Drain Speed, Light, Cure Common Disease, Drain Magicka</td>
+<td>Dralval Andrano</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>Resin</td>
+<td>Restore Health, Restore Speed, Burden, Resist Common Disease</td>
+<td>Dulian</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Resin</td>
+<td>Restore Health, Restore Speed, Burden, Resist Common Disease</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Resin</td>
+<td>Restore Health, Restore Speed, Burden, Resist Common Disease</td>
+<td>Aurane Frernis</td>
+<td>Vivec, Foreign Quarter, Aurane Frernis: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Resin</td>
+<td>Restore Health, Restore Speed, Burden, Resist Common Disease</td>
+<td>Guls Llervu</td>
+<td>Ald’ruhn, Guls Llervu’s House</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Resin</td>
+<td>Restore Health, Restore Speed, Burden, Resist Common Disease</td>
+<td>Jolda</td>
+<td>Tel Mora, Jolda: Apothecary</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Resin</td>
+<td>Restore Health, Restore Speed, Burden, Resist Common Disease</td>
+<td>Llathyno Hlaalu</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Resin</td>
+<td>Restore Health, Restore Speed, Burden, Resist Common Disease</td>
+<td>Bildren Areleth</td>
+<td>Tel Aruhn, Bildren Areleth: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Roobrush</td>
+<td>Drain Willpower, Fortify Agility, Drain Health, Cure Poison</td>
+<td>Somutis Vunnis</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Roobrush</td>
+<td>Drain Willpower, Fortify Agility, Drain Health, Cure Poison</td>
+<td>Relms Gilvilo</td>
+<td>Vivec, Redoran Temple Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Roobrush</td>
+<td>Drain Willpower, Fortify Agility, Drain Health, Cure Poison</td>
+<td>Irna Maryon</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Roobrush</td>
+<td>Drain Willpower, Fortify Agility, Drain Health, Cure Poison</td>
+<td>Danoso Andrano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Roobrush</td>
+<td>Drain Willpower, Fortify Agility, Drain Health, Cure Poison</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>Drain Health, Feather, Restore Intelligence, Drain Agility</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">4</td>
+<td align="right">0.2</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>Drain Health, Feather, Restore Intelligence, Drain Agility</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">3</td>
+<td align="right">0.2</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>Drain Health, Feather, Restore Intelligence, Drain Agility</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">4</td>
+<td align="right">0.2</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>Drain Health, Feather, Restore Intelligence, Drain Agility</td>
+<td>Craetia Jullalian</td>
+<td>Vivec Foreign Quarter, Guild of Mages</td>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>Drain Health, Feather, Restore Intelligence, Drain Agility</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">3</td>
+<td align="right">0.2</td>
+<td align="right">200</td>
+</tr>
+<tr>
+<td>Saltrice</td>
+<td>Restore Fatigue, Fortify Magicka, Drain Strength, Restore Health</td>
+<td>Sedris Omalen</td>
+<td>Maar Gan, Outpost</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Saltrice</td>
+<td>Restore Fatigue, Fortify Magicka, Drain Strength, Restore Health</td>
+<td>J’Rasha</td>
+<td>Vivec, Foreign Quarter, J’Rasha: Healer</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Saltrice</td>
+<td>Restore Fatigue, Fortify Magicka, Drain Strength, Restore Health</td>
+<td>Guls Llervu</td>
+<td>Ald’ruhn, Guls Llervu’s House</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Saltrice</td>
+<td>Restore Fatigue, Fortify Magicka, Drain Strength, Restore Health</td>
+<td>Vaval Selas</td>
+<td>Vivec, St. Olms Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Saltrice</td>
+<td>Restore Fatigue, Fortify Magicka, Drain Strength, Restore Health</td>
+<td>Chaplain Ogrul</td>
+<td>Gnisis, Fort Darius</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Saltrice</td>
+<td>Restore Fatigue, Fortify Magicka, Drain Strength, Restore Health</td>
+<td>Tivam Sadri</td>
+<td>Holamayan Monastery</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Saltrice</td>
+<td>Restore Fatigue, Fortify Magicka, Drain Strength, Restore Health</td>
+<td>Scelian Plebo</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Saltrice</td>
+<td>Restore Fatigue, Fortify Magicka, Drain Strength, Restore Health</td>
+<td>Felara Andrethi</td>
+<td>Tel Aruhn, Tower Living Quarters</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Saltrice</td>
+<td>Restore Fatigue, Fortify Magicka, Drain Strength, Restore Health</td>
+<td>Eldrilu Dalen</td>
+<td>Vos, Vos Chapel</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Saltrice</td>
+<td>Restore Fatigue, Fortify Magicka, Drain Strength, Restore Health</td>
+<td>Llarara Omayn</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Scales</td>
+<td>Drain Personality, Water Walking, Restore Endurance, Swift Swim</td>
+<td>Ganalyn Saram</td>
+<td>Vivec, Hlaalu Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scales</td>
+<td>Drain Personality, Water Walking, Restore Endurance, Swift Swim</td>
+<td>Ajira</td>
+<td>Balmora, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scales</td>
+<td>Drain Personality, Water Walking, Restore Endurance, Swift Swim</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scales</td>
+<td>Drain Personality, Water Walking, Restore Endurance, Swift Swim</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scales</td>
+<td>Drain Personality, Water Walking, Restore Endurance, Swift Swim</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">10</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scales</td>
+<td>Drain Personality, Water Walking, Restore Endurance, Swift Swim</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">10</td>
+<td align="right">0.2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scamp Skin</td>
+<td>Drain Magicka, Cure Paralyzation, Restore Personality, Restore Strength</td>
+<td>Folvys Andalor</td>
+<td>Ald’ruhn Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scamp Skin</td>
+<td>Drain Magicka, Cure Paralyzation, Restore Personality, Restore Strength</td>
+<td>Felara Andrethi</td>
+<td>Tel Aruhn, Tower Living Quarters</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scamp Skin</td>
+<td>Drain Magicka, Cure Paralyzation, Restore Personality, Restore Strength</td>
+<td>Aunius Autrus</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scamp Skin</td>
+<td>Drain Magicka, Cure Paralyzation, Restore Personality, Restore Strength</td>
+<td>Arnand Liric</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scamp Skin</td>
+<td>Drain Magicka, Cure Paralyzation, Restore Personality, Restore Strength</td>
+<td>J’Rasha</td>
+<td>Vivec, Foreign Quarter, J’Rasha: Healer</td>
+<td align="right">3</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scathecraw</td>
+<td>Drain Strength, Cure Poison, Drain Health, Restore Willpower</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scathecraw</td>
+<td>Drain Strength, Cure Poison, Drain Health, Restore Willpower</td>
+<td>Irna Maryon</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scathecraw</td>
+<td>Drain Strength, Cure Poison, Drain Health, Restore Willpower</td>
+<td>Galuro Belan</td>
+<td>Vivec, Telvanni Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scathecraw</td>
+<td>Drain Strength, Cure Poison, Drain Health, Restore Willpower</td>
+<td>Cocistian Quaspus</td>
+<td>Buckmoth Legion Fort</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scathecraw</td>
+<td>Drain Strength, Cure Poison, Drain Health, Restore Willpower</td>
+<td>Guls Llervu</td>
+<td>Ald’ruhn, Guls Llervu’s House</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scathecraw</td>
+<td>Drain Strength, Cure Poison, Drain Health, Restore Willpower</td>
+<td>Andil</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scathecraw</td>
+<td>Drain Strength, Cure Poison, Drain Health, Restore Willpower</td>
+<td>Dralval Andrano</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Scrap Metal</td>
+<td>Drain Health, Lightning Shield, Resist Shock, Restore Intelligence</td>
+<td>Cienne Sintieve</td>
+<td>Ald’ruhn, Cienne Sintieve: Alchemist</td>
+<td align="right">5</td>
+<td align="right">10.0</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Scrap Metal</td>
+<td>Drain Health, Lightning Shield, Resist Shock, Restore Intelligence</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">5</td>
+<td align="right">10.0</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Scrap Metal</td>
+<td>Drain Health, Lightning Shield, Resist Shock, Restore Intelligence</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">5</td>
+<td align="right">10.0</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Scrap Metal</td>
+<td>Drain Health, Lightning Shield, Resist Shock, Restore Intelligence</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">10</td>
+<td align="right">10.0</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Scrap Metal</td>
+<td>Drain Health, Lightning Shield, Resist Shock, Restore Intelligence</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">5</td>
+<td align="right">10.0</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Scrap Metal</td>
+<td>Drain Health, Lightning Shield, Resist Shock, Restore Intelligence</td>
+<td>Andilu Drothan</td>
+<td>Vivec Foreign Quarter, Andilu Drothan: Alchemist</td>
+<td align="right">4</td>
+<td align="right">10.0</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td>Scrib Jelly</td>
+<td>Fortify Willpower, Cure Poison, Cure Blight Disease, Restore Willpower</td>
+<td>Arnand Liric</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scrib Jelly</td>
+<td>Fortify Willpower, Cure Poison, Cure Blight Disease, Restore Willpower</td>
+<td>Folvys Andalor</td>
+<td>Ald’ruhn Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scrib Jelly</td>
+<td>Fortify Willpower, Cure Poison, Cure Blight Disease, Restore Willpower</td>
+<td>Eldrilu Dalen</td>
+<td>Vos, Vos Chapel</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scrib Jelly</td>
+<td>Fortify Willpower, Cure Poison, Cure Blight Disease, Restore Willpower</td>
+<td>Threvul Serethi</td>
+<td>Sadrith Mora, Thervul Serethi: Healer</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scrib Jelly</td>
+<td>Fortify Willpower, Cure Poison, Cure Blight Disease, Restore Willpower</td>
+<td>Vaval Selas</td>
+<td>Vivec, St. Olms Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scrib Jelly</td>
+<td>Fortify Willpower, Cure Poison, Cure Blight Disease, Restore Willpower</td>
+<td>Llathyno Hlaalu</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scrib Jerky</td>
+<td>Restore Fatigue, Fortify Fatigue, Burden, Swift Swim</td>
+<td>Llarara Omayn</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Scrib Jerky</td>
+<td>Restore Fatigue, Fortify Fatigue, Burden, Swift Swim</td>
+<td>Eldrilu Dalen</td>
+<td>Vos, Vos Chapel</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Scrib Jerky</td>
+<td>Restore Fatigue, Fortify Fatigue, Burden, Swift Swim</td>
+<td>Aunius Autrus</td>
+<td>Wolverine Hall, Imperial Shrine</td>
+<td align="right">10</td>
+<td align="right">0.2</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Scrib Jerky</td>
+<td>Restore Fatigue, Fortify Fatigue, Burden, Swift Swim</td>
+<td>Dulian</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">10</td>
+<td align="right">0.2</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Scrib Jerky</td>
+<td>Restore Fatigue, Fortify Fatigue, Burden, Swift Swim</td>
+<td>Arrille</td>
+<td>Seyda Neen, Arrille’s Tradehouse</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Scrib Jerky</td>
+<td>Restore Fatigue, Fortify Fatigue, Burden, Swift Swim</td>
+<td>Tivam Sadri</td>
+<td>Holamayan Monastery</td>
+<td align="right">10</td>
+<td align="right">0.2</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Scrib Jerky</td>
+<td>Restore Fatigue, Fortify Fatigue, Burden, Swift Swim</td>
+<td>Galsa Andrano</td>
+<td>Mournhold Temple: Infirmary</td>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Scrib Jerky</td>
+<td>Restore Fatigue, Fortify Fatigue, Burden, Swift Swim</td>
+<td>Folvys Andalor</td>
+<td>Ald’ruhn Temple</td>
+<td align="right">10</td>
+<td align="right">0.2</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Scuttle</td>
+<td>Restore Fatigue, Fortify Fatigue, Feather, Telekinesis</td>
+<td>Llathyno Hlaalu</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scuttle</td>
+<td>Restore Fatigue, Fortify Fatigue, Feather, Telekinesis</td>
+<td>J’Rasha</td>
+<td>Vivec, Foreign Quarter, J’Rasha: Healer</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scuttle</td>
+<td>Restore Fatigue, Fortify Fatigue, Feather, Telekinesis</td>
+<td>Folvys Andalor</td>
+<td>Ald’ruhn Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scuttle</td>
+<td>Restore Fatigue, Fortify Fatigue, Feather, Telekinesis</td>
+<td>Threvul Serethi</td>
+<td>Sadrith Mora, Thervul Serethi: Healer</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scuttle</td>
+<td>Restore Fatigue, Fortify Fatigue, Feather, Telekinesis</td>
+<td>Guls Llervu</td>
+<td>Ald’ruhn, Guls Llervu’s House</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Scuttle</td>
+<td>Restore Fatigue, Fortify Fatigue, Feather, Telekinesis</td>
+<td>Felara Andrethi</td>
+<td>Tel Aruhn, Tower Living Quarters</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Shalk Resin</td>
+<td>Drain Fatigue, Fortify Health, Drain Personality, Fortify Speed</td>
+<td>Lloros Sarano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Shalk Resin</td>
+<td>Drain Fatigue, Fortify Health, Drain Personality, Fortify Speed</td>
+<td>Salen Ravel</td>
+<td>Maar Gan, Shrine</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Shalk Resin</td>
+<td>Drain Fatigue, Fortify Health, Drain Personality, Fortify Speed</td>
+<td>Arrille</td>
+<td>Seyda Neen, Arrille’s Tradehouse</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Shalk Resin</td>
+<td>Drain Fatigue, Fortify Health, Drain Personality, Fortify Speed</td>
+<td>Llarara Omayn</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Shalk Resin</td>
+<td>Drain Fatigue, Fortify Health, Drain Personality, Fortify Speed</td>
+<td>Aurane Frernis</td>
+<td>Vivec, Foreign Quarter, Aurane Frernis: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Shalk Resin</td>
+<td>Drain Fatigue, Fortify Health, Drain Personality, Fortify Speed</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Shalk Resin</td>
+<td>Drain Fatigue, Fortify Health, Drain Personality, Fortify Speed</td>
+<td>Andil</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Sload Soap</td>
+<td>Drain Personality, Fortify Agility, Fire Shield, Restore Agility</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Sload Soap</td>
+<td>Drain Personality, Fortify Agility, Fire Shield, Restore Agility</td>
+<td>Andilu Drothan</td>
+<td>Vivec Foreign Quarter, Andilu Drothan: Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Sload Soap</td>
+<td>Drain Personality, Fortify Agility, Fire Shield, Restore Agility</td>
+<td>Peragon</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Sload Soap</td>
+<td>Drain Personality, Fortify Agility, Fire Shield, Restore Agility</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Sload Soap</td>
+<td>Drain Personality, Fortify Agility, Fire Shield, Restore Agility</td>
+<td>Brarayni Sarys</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Small Kwama Egg</td>
+<td>Restore Fatigue</td>
+<td>Ajira</td>
+<td>Balmora, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Small Kwama Egg</td>
+<td>Restore Fatigue</td>
+<td>Zanmulk Sammalamus</td>
+<td>Gnisis, Temple</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Small Kwama Egg</td>
+<td>Restore Fatigue</td>
+<td>Cienne Sintieve</td>
+<td>Ald’ruhn, Cienne Sintieve: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Small Kwama Egg</td>
+<td>Restore Fatigue</td>
+<td>J’Rasha</td>
+<td>Vivec, Foreign Quarter, J’Rasha: Healer</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Small Kwama Egg</td>
+<td>Restore Fatigue</td>
+<td>Ulumpha gra-Sharob</td>
+<td>Gnisis, Fort Darius</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Small Kwama Egg</td>
+<td>Restore Fatigue</td>
+<td>Threvul Serethi</td>
+<td>Sadrith Mora, Thervul Serethi: Healer</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Small Kwama Egg</td>
+<td>Restore Fatigue</td>
+<td>Vaval Selas</td>
+<td>Vivec, St. Olms Temple</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Small Kwama Egg</td>
+<td>Restore Fatigue</td>
+<td>Felara Andrethi</td>
+<td>Tel Aruhn, Tower Living Quarters</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Small Kwama Egg</td>
+<td>Restore Fatigue</td>
+<td>Tusamircil</td>
+<td>Wolverine Hall, Mages Guild</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Spore Pod</td>
+<td>Drain Strength, Drain Fatigue, Detect Key, Paralyze</td>
+<td>Peragon</td>
+<td>Moonmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Spore Pod</td>
+<td>Drain Strength, Drain Fatigue, Detect Key, Paralyze</td>
+<td>Danoso Andrano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Spore Pod</td>
+<td>Drain Strength, Drain Fatigue, Detect Key, Paralyze</td>
+<td>Tusamircil</td>
+<td>Wolverine Hall, Mages Guild</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Spore Pod</td>
+<td>Drain Strength, Drain Fatigue, Detect Key, Paralyze</td>
+<td>Cienne Sintieve</td>
+<td>Ald’ruhn, Cienne Sintieve: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Spore Pod</td>
+<td>Drain Strength, Drain Fatigue, Detect Key, Paralyze</td>
+<td>Brarayni Sarys</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Spore Pod</td>
+<td>Drain Strength, Drain Fatigue, Detect Key, Paralyze</td>
+<td>Ganalyn Saram</td>
+<td>Vivec, Hlaalu Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Spore Pod</td>
+<td>Drain Strength, Drain Fatigue, Detect Key, Paralyze</td>
+<td>Ernand Thierry</td>
+<td>Caldera, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Stoneflower Petals</td>
+<td>Restore Strength, Fortify Magicka, Drain Luck, Fortify Personality</td>
+<td>Bildren Areleth</td>
+<td>Tel Aruhn, Bildren Areleth: Apothecary</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Stoneflower Petals</td>
+<td>Restore Strength, Fortify Magicka, Drain Luck, Fortify Personality</td>
+<td>Mehra Drora</td>
+<td>Gnisis, Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Stoneflower Petals</td>
+<td>Restore Strength, Fortify Magicka, Drain Luck, Fortify Personality</td>
+<td>Andil</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Stoneflower Petals</td>
+<td>Restore Strength, Fortify Magicka, Drain Luck, Fortify Personality</td>
+<td>Pierlette Rostorard</td>
+<td>Sadrith Mora, Pierlette Rostorard: Apothecary</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Stoneflower Petals</td>
+<td>Restore Strength, Fortify Magicka, Drain Luck, Fortify Personality</td>
+<td>Llathyno Hlaalu</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Stoneflower Petals</td>
+<td>Restore Strength, Fortify Magicka, Drain Luck, Fortify Personality</td>
+<td>Cocistian Quaspus</td>
+<td>Buckmoth Legion Fort</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Stoneflower Petals</td>
+<td>Restore Strength, Fortify Magicka, Drain Luck, Fortify Personality</td>
+<td>Galuro Belan</td>
+<td>Vivec, Telvanni Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Trama Root</td>
+<td>Restore Willpower, Levitate, Drain Magicka, Drain Speed</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Trama Root</td>
+<td>Restore Willpower, Levitate, Drain Magicka, Drain Speed</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Trama Root</td>
+<td>Restore Willpower, Levitate, Drain Magicka, Drain Speed</td>
+<td>Dulian</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Trama Root</td>
+<td>Restore Willpower, Levitate, Drain Magicka, Drain Speed</td>
+<td>Tusamircil</td>
+<td>Wolverine Hall, Mages Guild</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Trama Root</td>
+<td>Restore Willpower, Levitate, Drain Magicka, Drain Speed</td>
+<td>Llathyno Hlaalu</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Trama Root</td>
+<td>Restore Willpower, Levitate, Drain Magicka, Drain Speed</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Trama Root</td>
+<td>Restore Willpower, Levitate, Drain Magicka, Drain Speed</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Trama Root</td>
+<td>Restore Willpower, Levitate, Drain Magicka, Drain Speed</td>
+<td>Andilu Drothan</td>
+<td>Vivec Foreign Quarter, Andilu Drothan: Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Vampire Dust</td>
+<td>Fortify Health, Fortify Strength, Spell Absorption, Vampirism</td>
+<td>Brarayni Sarys</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">1</td>
+<td align="right">0.1</td>
+<td align="right">500</td>
+</tr>
+<tr>
+<td>Vampire Dust</td>
+<td>Fortify Health, Fortify Strength, Spell Absorption, Vampirism</td>
+<td>Anarenen</td>
+<td>Ald’ruhn, Guild of Mages</td>
+<td align="right">1</td>
+<td align="right">0.1</td>
+<td align="right">500</td>
+</tr>
+<tr>
+<td>Vampire Dust</td>
+<td>Fortify Health, Fortify Strength, Spell Absorption, Vampirism</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">2</td>
+<td align="right">0.1</td>
+<td align="right">500</td>
+</tr>
+<tr>
+<td>Vampire Dust</td>
+<td>Fortify Health, Fortify Strength, Spell Absorption, Vampirism</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">1</td>
+<td align="right">0.1</td>
+<td align="right">500</td>
+</tr>
+<tr>
+<td>Violet Coprinus</td>
+<td>Water Walking, Drain Fatigue, Poison</td>
+<td>Ernand Thierry</td>
+<td>Caldera, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Violet Coprinus</td>
+<td>Water Walking, Drain Fatigue, Poison</td>
+<td>Jolda</td>
+<td>Tel Mora, Jolda: Apothecary</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Violet Coprinus</td>
+<td>Water Walking, Drain Fatigue, Poison</td>
+<td>Cienne Sintieve</td>
+<td>Ald’ruhn, Cienne Sintieve: Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Violet Coprinus</td>
+<td>Water Walking, Drain Fatigue, Poison</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Void Salts</td>
+<td>Restore Magicka, Spell Absorption, Paralyze, Drain Endurance</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">2</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Void Salts</td>
+<td>Restore Magicka, Spell Absorption, Paralyze, Drain Endurance</td>
+<td>Nalcarya of White Haven</td>
+<td>Balmora, Nalcarya of White Haven: Fine Alchemist</td>
+<td align="right">7</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Void Salts</td>
+<td>Restore Magicka, Spell Absorption, Paralyze, Drain Endurance</td>
+<td>Cienne Sintieve</td>
+<td>Ald’ruhn, Cienne Sintieve: Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Void Salts</td>
+<td>Restore Magicka, Spell Absorption, Paralyze, Drain Endurance</td>
+<td>Jolda</td>
+<td>Tel Mora, Jolda: Apothecary</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Void Salts</td>
+<td>Restore Magicka, Spell Absorption, Paralyze, Drain Endurance</td>
+<td>Garas Seloth</td>
+<td>Vivec, Telvanni Alchemist</td>
+<td align="right">2</td>
+<td align="right">0.1</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Wickwheat</td>
+<td>Restore Health, Fortify Willpower, Paralyze, Damage Intelligence</td>
+<td>Dralval Andrano</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Wickwheat</td>
+<td>Restore Health, Fortify Willpower, Paralyze, Damage Intelligence</td>
+<td>Garas Seloth</td>
+<td>Vivec, Telvanni Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Wickwheat</td>
+<td>Restore Health, Fortify Willpower, Paralyze, Damage Intelligence</td>
+<td>Llarara Omayn</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Wickwheat</td>
+<td>Restore Health, Fortify Willpower, Paralyze, Damage Intelligence</td>
+<td>Chaplain Ogrul</td>
+<td>Gnisis, Fort Darius</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Wickwheat</td>
+<td>Restore Health, Fortify Willpower, Paralyze, Damage Intelligence</td>
+<td>Milar Maryon</td>
+<td>Tel Vos, Services Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Wickwheat</td>
+<td>Restore Health, Fortify Willpower, Paralyze, Damage Intelligence</td>
+<td>Danoso Andrano</td>
+<td>Ald’ruhn, Temple</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Wickwheat</td>
+<td>Restore Health, Fortify Willpower, Paralyze, Damage Intelligence</td>
+<td>Threvul Serethi</td>
+<td>Sadrith Mora, Thervul Serethi: Healer</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Wickwheat</td>
+<td>Restore Health, Fortify Willpower, Paralyze, Damage Intelligence</td>
+<td>Irna Maryon</td>
+<td>Tel Aruhn, Tower Entry</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Wickwheat</td>
+<td>Restore Health, Fortify Willpower, Paralyze, Damage Intelligence</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Willow Anther</td>
+<td>Drain Personality, Frost Shield, Cure Common Disease, Cure Paralyzation</td>
+<td>Gils Drelas</td>
+<td>Tel Branora, Upper Tower: Therana’s Chamber</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Willow Anther</td>
+<td>Drain Personality, Frost Shield, Cure Common Disease, Cure Paralyzation</td>
+<td>Daynali Dren</td>
+<td>Tel Mora, Lower Tower</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Willow Anther</td>
+<td>Drain Personality, Frost Shield, Cure Common Disease, Cure Paralyzation</td>
+<td>Anis Seloth</td>
+<td>Sadrith Mora, Anis Seloth: Alchemist</td>
+<td align="right">10</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Willow Anther</td>
+<td>Drain Personality, Frost Shield, Cure Common Disease, Cure Paralyzation</td>
+<td>Ajira</td>
+<td>Balmora, Guild of Mages</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Willow Anther</td>
+<td>Drain Personality, Frost Shield, Cure Common Disease, Cure Paralyzation</td>
+<td>Dulian</td>
+<td>Buckmoth Legion Fort, Interior</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Willow Anther</td>
+<td>Drain Personality, Frost Shield, Cure Common Disease, Cure Paralyzation</td>
+<td>Ganalyn Saram</td>
+<td>Vivec, Hlaalu Alchemist</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Willow Anther</td>
+<td>Drain Personality, Frost Shield, Cure Common Disease, Cure Paralyzation</td>
+<td>Llathyno Hlaalu</td>
+<td>Balmora, Temple</td>
+<td align="right">5</td>
+<td align="right">0.1</td>
+<td align="right">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<script type="module">let dataTable = new simpleDatatables.DataTable("#restocking > table", {
+    perPage: 20,
+    perPageSelect: [5, 10, 20, 50, ["All", 0]],
+    searchItemSeparator: ";",
+    searchQuerySeparator: ";",
+    columns: [
+        {select: [4, 5, 6], hidden: true}
+        ],
+    tableRender: (_data, table, type) => {
+        if (type === "print") {
+            return table
+        }
+        const tHead = table.childNodes[0]
+        const filterHeaders = {
+            nodeName: "TR",
+            childNodes: tHead.childNodes[0].childNodes.map(
+                (_th, index) => ({nodeName: "TH",
+                    childNodes: [
+                        {
+                            nodeName: "INPUT",
+                            attributes: {
+                                class: "datatable-input",
+                                type: "search",
+                                "data-and": "true",
+                                "data-columns": `[${index}]`
+                            }
+                        }
+                    ]})
+            )
+        }
+        tHead.childNodes.push(filterHeaders)
+        return table
+        }
+    });
+
+window.dataTable = dataTable;
+window.columnFilter = simpleDatatables.addColumnFilter(
+    dataTable
+);</script>
+</div>
+</body>
+</html>

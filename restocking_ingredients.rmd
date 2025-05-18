@@ -1,0 +1,96 @@
+---
+title: Restocking Ingredients and their location
+output:
+    html:
+        meta:
+            css: css/style.css
+---
+
+
+<details>
+<summary><b>How to use</b></summary>
+<p>
+Search for <b>Effect</b> and <b>Location</b> to see what restocking merchants are nearby.
+    <ul>
+    <li>Type into a column search element to search in that column.</li>
+    <li>Type into a global search element to search globally.</li>
+    <li>Click on the waffle menu to show/hide columns (restock Count, Weight, or Cost)</li>
+    <li>Use <b>;</b> as a separator to search for multiple effects</li>
+    </ul>
+
+<b>Examples</b>
+    <ul>
+    <li>There are two merchants stocking <b>Fortify Fatigue</b> ingredients in <b>Vivec</b></li>
+    <li>There is only a single ingredient, Saltrice, having both <b>Restore Health</b> and <b>Restore Fatigue</b> effects (searching for <i>Restore Health;Restore Fatigue</i>)
+    </ul>
+</p>
+
+</details> 
+
+
+```{r, echo = FALSE}
+litedown::vest(
+    css = c("@npm/simple-datatables/dist/style", "@npm/simple-datatables/dist/column_filter"),
+    js = "@npm/simple-datatables"
+    )
+```
+
+::: {#restocking}
+```{r, echo = FALSE}
+csv = "restocking.csv"
+if(!file.exists(csv)){
+    source("src/get_restocking_ingredients.r")
+    restocking = get_restocking_ingredients()
+    write.csv(restocking, csv, row.names = FALSE)
+    } else {
+    restocking = read.csv(csv)
+    }
+
+names(restocking) = tools::toTitleCase(names(restocking))
+
+# Sort
+I(restocking[c("Ingredient", "Effect", "Merchant", "Location", "Count", "Weight", "Value")])
+```
+:::
+
+```{js, type = "module", echo = FALSE}
+let dataTable = new simpleDatatables.DataTable("#restocking > table", {
+    perPage: 20,
+    perPageSelect: [5, 10, 20, 50, ["All", 0]],
+    searchItemSeparator: ";",
+    searchQuerySeparator: ";",
+    columns: [
+        {select: [4, 5, 6], hidden: true}
+        ],
+    tableRender: (_data, table, type) => {
+        if (type === "print") {
+            return table
+        }
+        const tHead = table.childNodes[0]
+        const filterHeaders = {
+            nodeName: "TR",
+            childNodes: tHead.childNodes[0].childNodes.map(
+                (_th, index) => ({nodeName: "TH",
+                    childNodes: [
+                        {
+                            nodeName: "INPUT",
+                            attributes: {
+                                class: "datatable-input",
+                                type: "search",
+                                "data-and": "true",
+                                "data-columns": `[${index}]`
+                            }
+                        }
+                    ]})
+            )
+        }
+        tHead.childNodes.push(filterHeaders)
+        return table
+        }
+    });
+
+window.dataTable = dataTable;
+window.columnFilter = simpleDatatables.addColumnFilter(
+    dataTable
+);
+```
