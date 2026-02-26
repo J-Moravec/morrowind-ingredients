@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="generator" content="litedown 0.7.1">
+<meta name="generator" content="litedown 0.8">
 <title>Restocking Ingredients and their location</title>
 <style type="text/css">
 body {
@@ -31,6 +31,13 @@ table {
     width: 150px;
 }
 
+.highlight-positive {
+  color: green;
+}
+
+.highlight-negative {
+  color: red;
+}
 
 </style>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@10.0.0" defer></script>
@@ -4009,12 +4016,107 @@ Search for <b>Effect</b> and <b>Location</b> to see what restocking merchants ar
 </tbody>
 </table>
 </div>
-<script type="module">let dataTable = new simpleDatatables.DataTable("#restocking > table", {
+<script type="module">const positive_effects = new Set([
+    "Cure Blight Disease",
+    "Cure Common Disease",
+    "Cure Paralyzation",
+    "Cure Poison",
+    "Detect Animal",
+    "Detect Enchantment",
+    "Detect Key",
+    "Dispel",
+    "Feather",
+    "Fire Shield",
+    "Fortify Agility",
+    "Fortify Attack",
+    "Fortify Endurance",
+    "Fortify Fatigue",
+    "Fortify Health",
+    "Fortify Intelligence",
+    "Fortify Luck",
+    "Fortify Magicka",
+    "Fortify Personality",
+    "Fortify Speed",
+    "Fortify Strength",
+    "Fortify Willpower",
+    "Frost Shield",
+    "Invisibility",
+    "Levitate",
+    "Light",
+    "Lighning Shield",
+    "Night Eye",
+    "Reflect",
+    "Resist Common Disease",
+    "Resist Fire",
+    "Resist Frost",
+    "Resist Magicka",
+    "Resist Poison",
+    "Resist Shock",
+    "Restore Agility",
+    "Restore Endurance",
+    "Restore Fatigue",
+    "Restore Health",
+    "Restore Intelligence",
+    "Restore Luck",
+    "Restore Magicka",
+    "Restore Personality",
+    "Restore Speed",
+    "Restore Strength",
+    "Restore Willpower",
+    "Spell Absorption",
+    "Swift Swim",
+    "Telekinesis",
+    "Water Breathing",
+    "Water Walking"
+    ]);
+
+const negative_effects = new Set([
+    "Burden",
+    "Damage Intelligence",
+    "Drain Agility",
+    "Drain Endurance",
+    "Drain Fatigue",
+    "Drain Health",
+    "Drain Intelligence",
+    "Drain Luck",
+    "Drain Magicka",
+    "Drain Personality",
+    "Drain Speed",
+    "Drain Strength",
+    "Drain Willpower",
+    "Paralyze",
+    "Poison",
+    "Vampirism"
+    ]);
+
+
+const render_highlight = function(data, _cell, _dataIndex, _cellIndex) {
+    if(!window.mixable_effects)
+        return data[0].data;
+
+    const values = data[0].data
+        .split(/\s*,\s*/)
+        .map(v => {
+            if(window.mixable_effects.has(v)){
+                if(positive_effects.has(v))
+                    return `\<span class="highlight-positive"\>${v}\</span\>`;
+                if(negative_effects.has(v))
+                    return `\<span class="highlight-negative"\>${v}\</span\>`;
+            }
+            return v;
+        }).join(", ");
+
+    return values;
+    }
+
+
+let dataTable = new simpleDatatables.DataTable("#restocking > table", {
     perPage: 20,
     perPageSelect: [5, 10, 20, 50, ["All", 0]],
     searchItemSeparator: ";",
     searchQuerySeparator: ";",
     columns: [
+        {select: 1, render: render_highlight},
         {select: [4, 5, 6], hidden: true}
         ],
     tableRender: (_data, table, type) => {
@@ -4043,6 +4145,32 @@ Search for <b>Effect</b> and <b>Location</b> to see what restocking merchants ar
         return table
         }
     });
+
+
+dataTable.on("datatable.search", (query, index) => {
+    const ingredients = new Set();
+    const counts = {};
+    const mixable_effects = new Set();
+
+    const rows = dataTable.data.data;
+    for(const i of index){
+        const ingredient = rows[i].cells[0].data[0].data;
+        const effects = rows[i].cells[1].data[0].data.split(/\s*,\s*/);
+
+        if(ingredients.has(ingredient))
+            continue
+
+        ingredients.add(ingredient)
+        for(const effect of effects){
+            counts[effect] = (counts[effect] || 0) + 1;
+            if(counts[effect] > 1) mixable_effects.add(effect)
+            }
+        }
+
+    window.mixable_effects = mixable_effects;
+    dataTable.update();
+    });
+
 
 window.dataTable = dataTable;
 window.columnFilter = simpleDatatables.addColumnFilter(

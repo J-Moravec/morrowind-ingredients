@@ -23,4 +23,11 @@ table {
     width: 150px;
 }
 
+.highlight-positive {
+  color: green;
+}
+
+.highlight-negative {
+  color: red;
+}
 
