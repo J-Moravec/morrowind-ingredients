@@ -81,7 +81,7 @@ const positive_effects = new Set([
     "Invisibility",
     "Levitate",
     "Light",
-    "Lighning Shield",
+    "Lightning Shield",
     "Night Eye",
     "Reflect",
     "Resist Common Disease",
@@ -193,7 +193,7 @@ dataTable.on("datatable.search", (query, index) => {
     const rows = dataTable.data.data;
     for(const i of index){
         const ingredient = rows[i].cells[0].data[0].data;
-        const effects = rows[i].cells[1].data[0].data.split(/\s*,\s*/);
+        const effects = new Set(rows[i].cells[1].data[0].data.split(/\s*,\s*/));
 
         if(ingredients.has(ingredient))
             continue
